@@ -1,2 +1,2 @@
-# Laravel9-BlogWithSEO
+# Laravel 9 - Blog with Google SEO
  
