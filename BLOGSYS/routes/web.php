@@ -41,7 +41,7 @@ Route::middleware('auth')->group(function () {
                 ->group(function(){
                     Route::get('/','index')->name('index');
                     Route::get('/create','create')->name('create');
-                    Route::get('/update/{id}','update')->name('update');
+                    Route::get('/update/{id}','edit')->name('edit');
 
                     Route::post('/','store')->name('store');
                     Route::put('/','update')->name('update');
@@ -53,7 +53,7 @@ Route::middleware('auth')->group(function () {
                 ->group(function(){
                     Route::get('/','index')->name('index');
                     Route::get('/create','create')->name('create');
-                    Route::get('/update/{id}','update')->name('update');
+                    Route::get('/update/{id}','edit')->name('edit');
 
                     Route::post('/','store')->name('store');
                     Route::put('/','update')->name('update');
