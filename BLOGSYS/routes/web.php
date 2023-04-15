@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Admin\BlogController;
+use App\Http\Controllers\Admin\TagController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,4 +31,34 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+    Route::prefix('admin')
+        ->name('admin.')
+        ->middleware('auth')
+        ->group(function(){
+            Route::controller(App\Http\Controllers\Admin\BlogController::class)
+                ->prefix('blog')
+                ->name('blog.')
+                ->group(function(){
+                    Route::get('/','index')->name('index');
+                    Route::get('/create','create')->name('create');
+                    Route::get('/update/{id}','update')->name('update');
+
+                    Route::post('/','store')->name('store');
+                    Route::put('/','update')->name('update');
+                    Route::delete('/','destroy')->name('destroy');
+            });
+            Route::controller(App\Http\Controllers\Admin\TagController::class)
+                ->prefix('tag')
+                ->name('tag.')
+                ->group(function(){
+                    Route::get('/','index')->name('index');
+                    Route::get('/create','create')->name('create');
+                    Route::get('/update/{id}','update')->name('update');
+
+                    Route::post('/','store')->name('store');
+                    Route::put('/','update')->name('update');
+                    Route::delete('/','destroy')->name('destroy');
+            });
+    });
+
+    require __DIR__.'/auth.php';
