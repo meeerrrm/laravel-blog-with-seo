@@ -6,10 +6,10 @@ Open source project, created for optimize your own blog with Google SEO
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [MySQL](https://www.mysql.com/) - Database
-- [LARAVEL v9.52.5](https://laravel.com/) - Server Framework & Web Framework
-- [TailwindCSS](https://tailwindcss.com/) - Style (CSS) Framework
-- [Alpine.js](https://alpinejs.dev/) & [Vite.js](https://vitejs.dev/) - Javascript Framework
+- [Laravel v9.52.5](https://laravel.com/) - Server Framework & Web Framework
+- [TailwindCSS v3.3.1](https://tailwindcss.com/) - Style (CSS) Framework
+- [Alpine.js v3.4.2](https://alpinejs.dev/) & [Vite.js v4.0.0](https://vitejs.dev/) - Javascript Framework
+- [MySQL v10.4.24](https://www.mysql.com/) - Database
 
 
 
