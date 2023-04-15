@@ -22,11 +22,7 @@ class PictureController extends Controller
 
         $file = $request->file('new_profile');
         $saved_name = str_replace(" ","-",strtolower(Auth::user()->email)).'.'.$file->getClientOriginalExtension();
-        $path = $request->file('new_profile')->storeAs('public/picture',$saved_name);        
-
-        if(Storage::exists('picture/'.$request->old_profile)){
-            Storage::disk('public')->delete('picture/'.$request->old_profile);
-        }
+        $path = $request->file('new_profile')->storeAs('public/picture',$saved_name);
 
         $request->user()->update([
             'profile_picture' => $saved_name,
