@@ -1,5 +1,5 @@
 
-# Laravel 9 - Blog with Google SEO
+# Laravel - Blog with Google SEO
 
 Open source project, created for optimize your own blog with Google SEO
 
