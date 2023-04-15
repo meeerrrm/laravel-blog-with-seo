@@ -18,7 +18,7 @@ Open source project, created for optimize your own blog with Google SEO
 | ---------------- |:----------------:| ------:|:----------------:|:----------------:|
 | Backend - Auth Page | Done | 100% | 14 April 2023 | 15 April 2023 |
 | Backend - User Profile Management | Done | 100% | 14 April 2023 | 15 April 2023 |
-| Backend - Blog Management| Work-in-progress | 0% | 15 April 2023 | |
+| Backend - Blog Management| Done | 99% | 15 April 2023 | 16 April 2023 |
 | Backend - Tag Management | Pending | 0% | | |
 | Frontend - Landing Page | Pending | 0% | | |
 | Frontend - Tag Page | Pending | 0% | | |
