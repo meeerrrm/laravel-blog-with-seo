@@ -7,7 +7,7 @@ Open source project, created for optimize your own blog with Google SEO
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [MySQL](https://www.mysql.com/) - Database
-- [Laravel](https://laravel.com/) - Server Framework & Web Framework
+- [LARAVEL v9.52.5](https://laravel.com/) - Server Framework & Web Framework
 - [TailwindCSS](https://tailwindcss.com/) - Style (CSS) Framework
 - [Alpine.js](https://alpinejs.dev/) & [Vite.js](https://vitejs.dev/) - Javascript Framework
 
