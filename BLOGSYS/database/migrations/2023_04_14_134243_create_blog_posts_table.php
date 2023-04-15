@@ -16,7 +16,6 @@ return new class extends Migration
         Schema::create('blog_posts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->foreignId('tag_id');
             $table->string('uniq');
             $table->string('thumnail');
             $table->string('keyword');
@@ -24,6 +23,7 @@ return new class extends Migration
             $table->text('description');
             $table->text('content');
             $table->date('publish_date');
+            $table->text('tag');
             $table->timestamps();
         });
     }
