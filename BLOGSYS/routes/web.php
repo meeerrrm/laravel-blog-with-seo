@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', [LandingController::class, 'index'])->name('index');
+Route::get('/{uniq}', [LandingController::class, 'detail'])->name('blog.detail');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

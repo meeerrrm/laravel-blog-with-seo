@@ -11,8 +11,11 @@ class LandingController extends Controller
     public function index()
     {
         $blogs = BlogPost::release()->get();
-
         return view('welcome',['blogs'=>$blogs]);
-        // dd($blogs);
+    }
+    public function detail($uniq)
+    {
+        $blog = BlogPost::where('uniq',$uniq)->first();
+        return view('blog-detail',['blog'=>$blog]);
     }
 }
