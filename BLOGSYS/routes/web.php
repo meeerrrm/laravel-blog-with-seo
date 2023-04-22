@@ -22,9 +22,6 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', [LandingController::class, 'index'])->name('index');
-Route::get('/{uniq}', [LandingController::class, 'detail'])->name('blog.detail');
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -65,4 +62,7 @@ Route::middleware('auth')->group(function () {
             });
     });
 
-    require __DIR__.'/auth.php';
+require __DIR__.'/auth.php';
+
+Route::get('/', [LandingController::class, 'index'])->name('index');
+Route::get('/{uniq}', [LandingController::class, 'detail'])->name('blog.detail');
