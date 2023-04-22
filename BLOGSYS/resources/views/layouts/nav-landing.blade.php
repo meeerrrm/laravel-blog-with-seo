@@ -20,9 +20,8 @@
 						<div class="flex flex-col items-start justify-center w-full text-black-700 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center pt-[85px] md:pt-0">
 							<div class="border-t-2 border-t-sky-900 w-full mb-3 md:hidden"></div>
 							<a href="{{ route('index') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Beranda</a>
-							<a href="#" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Tag</a>
-							<a href="#" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Category</a>
-							<a href="#" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Portal</a>
+							<a href="{{ route('tag') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Tag</a>
+							<a href="https://set_to_your_portal_page" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Portal</a>
 						</div>
 					</div>
 				</div>
