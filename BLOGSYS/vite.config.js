@@ -10,10 +10,10 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
             ],
-            refresh: false,
+            refresh: true,
         }),
         tailwindcss({
-            refresh: true,
+            refresh: false,
         })
     ],
 });
