@@ -1,4 +1,9 @@
 <x-landing-layout>
+
+	<x-slot name="seo_config">
+		<meta name="description" content="Tempat Entol Rizky membuat blog konten edukatif yang berisi seputar teknologi.">
+	</x-slot>
+
         <section class="p-8 h-[80vh] grid grid-cols-1 content-center" id="header">
             <div class="max-w-6xl mx-auto px-5 text-center">
                 <h1 class="text-7xl font-bold uppercase text-slate-100">BLOG</h1>

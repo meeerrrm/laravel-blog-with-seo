@@ -9,10 +9,14 @@
 @else
         <title>Blog - {{ config('app.name', 'Blog with SEO') }}</title>
 @endif
-        <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/logo/logo.png') }}">
-        <!-- Scripts -->
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo/logo.png') }}">
+<!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+@if(isset($seo_config))
+<!-- SEO -->
+        {{ $seo_config }}
+@endif
     </head>
     <body class="bg-slate-800">
         @include('layouts.nav-landing')
