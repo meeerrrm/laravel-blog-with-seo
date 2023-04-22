@@ -21,7 +21,7 @@ Open source project, created for optimize your own blog with Google SEO
 | Backend - Blog Management| Done | 99% | 15 April 2023 | 16 April 2023 |
 | Frontend - Landing Page | Pending | 75% | 22 April 2023 | |
 | Frontend - Tag Page | Pending | 0% | | |
-| Frontend - Detail Blog Page | On-Progress | 90% | 15 April 2023 | |
+| Frontend - Detail Blog Page | On-Progress | 90% | 22 April 2023 | |
 | Frontend - SEO Config | Pending |  0%| | |
 
 ## ✍️ Authors <a name = "authors"></a>
