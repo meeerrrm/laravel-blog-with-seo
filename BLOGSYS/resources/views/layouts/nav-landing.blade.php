@@ -5,7 +5,7 @@
 			:class="{'left-0 text-black h-auto': showMenu}">
 			<div class="relative px-5 max-w-7xl flex flex-wrap items-center justify-between h-24 py-1 mx-auto">
 				<div class="flex items-center justify-start h-full w-1/4">
-                    <a href="#" class="mx-auto z-[99]">
+                    <a href="{{ route('index') }}" class="mx-auto z-[99]">
                         <img 
                          src="{{ asset('assets/logo/logo.png') }}" 
                          class="h-20 z-[99] mx-auto"
@@ -19,7 +19,7 @@
 						class="flex-col pb-8 md:pb-0 w-full relative overflow-hidden bg-slate-800 rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row border-b-2 border-b-sky-900 sm:border-none">
 						<div class="flex flex-col items-start justify-center w-full text-black-700 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center pt-[85px] md:pt-0">
 							<div class="border-t-2 border-t-sky-900 w-full mb-3 md:hidden"></div>
-							<a href="#" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Beranda</a>
+							<a href="{{ route('index') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Beranda</a>
 							<a href="#" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Tag</a>
 							<a href="#" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Category</a>
 							<a href="#" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Portal</a>
