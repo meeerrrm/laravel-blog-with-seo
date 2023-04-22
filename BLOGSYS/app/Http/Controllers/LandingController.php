@@ -11,7 +11,8 @@ class LandingController extends Controller
     public function index()
     {
         $blogs = BlogPost::release()->get();
-        return view('welcome',['blogs'=>$blogs]);
+        $tag = $this->get_all_tag();
+        return view('welcome',['blogs'=>$blogs,'tags'=>$tag]);
     }
     public function detail($uniq)
     {

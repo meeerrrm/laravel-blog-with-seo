@@ -2,6 +2,10 @@
 
 	<x-slot name="seo_config">
 		<meta name="description" content="Tempat Entol Rizky membuat blog konten edukatif yang berisi seputar teknologi.">
+		<meta name="keywords" content="@foreach($tags as $key => $val){{$key .','}} @endforeach {{ config('app.name', 'Blog with SEO') }}">
+		<meta name="copyright"content="Entol Rizky Development" />
+		<meta name="owner" content="Entol Rizky Development" />
+		<meta name="blogcatalog" />
 	</x-slot>
 
         <section class="p-8 h-[80vh] grid grid-cols-1 content-center" id="header">
@@ -24,7 +28,7 @@
 									<p>
 										<span class="text-sky-400 font-thin hover:text-sky-600">{{ json_decode($blog->tag)[0] }}</span>
 									</p>
-									<h1 class="text-white font-bold text-2xl pt-2">{{ $blog->title }}</h1>
+									<h2 class="text-white font-bold text-2xl pt-2">{{ $blog->title }}</h2>
 								</div>
 							</div>
 						</a>
