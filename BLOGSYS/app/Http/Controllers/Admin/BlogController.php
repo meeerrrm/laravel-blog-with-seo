@@ -90,7 +90,7 @@ class BlogController extends FunctionController
             'description'=>$request->description,
             'content'=>json_encode($request->content),
             'publish_date'=>$request->publish_date,
-            'tag'=> json_encode(explode(" ",$request->tag)),
+            'tag'=> json_encode(explode(" ",strtolower($request->tag))),
         ]);
         return redirect(route('admin.blog.index'))->with('status','blog-updated');
     }
