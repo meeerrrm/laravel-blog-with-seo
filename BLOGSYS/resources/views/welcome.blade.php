@@ -1,10 +1,11 @@
 <x-landing-layout>
 
 	<x-slot name="seo_config">
-		<meta name="description" content="Tempat Entol Rizky membuat blog konten edukatif yang berisi seputar teknologi.">
+		<meta name="description" content="Blog dengan konten edukatif yang berisi seputar teknologi.">
 		<meta name="keywords" content="@foreach($tags as $key => $val){{$key .','}} @endforeach {{ config('app.name', 'Blog with SEO') }}">
 		<meta name="copyright"content="Entol Rizky Development" />
 		<meta name="owner" content="Entol Rizky Development" />
+		<meta name="author" content="Entol Rizky Development" />
 		<meta name="blogcatalog" />
 	</x-slot>
 
