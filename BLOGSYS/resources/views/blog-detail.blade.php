@@ -2,6 +2,38 @@
     <x-slot name="title">
         <title>{{ $blog->title }}</title>
     </x-slot>
+	<x-slot name="seo_config">
+		<meta name="description" content="{{ $blog->description }}">
+		<meta name="keywords" content="@foreach(json_decode($blog->tag) as $val){{ $val }}, @endforeach{{ strtolower($blog->user->name) }}">
+		<meta name="author" content="{{ $blog->user->name }}" />
+        <meta name="publisher" content="Entol Rizky Development">
+
+        <meta name="og:title" content="{{ $blog->title }}"/>
+        <meta name="og:type" content="website"/>
+        <meta name="og:url" content="{{ Request::url() }}"/>
+        <meta name="og:image" content="{{ asset('assets/blog/'.$blog->thumnail) }}"/>
+        <meta name="og:image:alt" content="{{ $blog->title }}" />
+        <meta name="og:site_name" content="ERDev"/>
+        <meta name="og:description" content="{{ $blog->description }}..."/>
+        <meta name="article:published_time" content="{{ $blog->publish_date }}"/>
+        <script type="application/ld+json">
+        {
+          "@context": "https://schema.org",
+          "@type": "NewsArticle",
+          "headline": "{{ $blog->title }}",
+          "image": [
+            "{{ asset('assets/blog/'.$blog->thumnail) }}",
+           ],
+          "datePublished": "{{ $blog->publish_date }}T08:00:00+08:00",
+          "dateModified": "{{ date('Y-m-d',strtotime($blog->updated_at)) }}T09:20:00+08:00",
+          "author": [{
+              "@type": "Person",
+              "name": "{{ $blog->user->name }}",
+              "url": "https://entolrizky.com/"
+            }]
+        }
+        </script>
+    </x-slot>
         <section class="p-4 py-24" id="header">
             <div class="max-w-4xl mx-auto px-5 text-center">
                 <div class="w-full md:h-96 bg-slate-900 rounded-2xl overflow-hidden" id="imagePlace">
