@@ -12,7 +12,7 @@
 		<meta name="blogcatalog" />
 	</x-slot>
 
-        <section class="p-8 h-[80vh] grid grid-cols-1 content-center" id="header">
+        <section class="p-8 pt-[20vh] grid grid-cols-1 content-center" id="header">
             <div class="max-w-6xl mx-auto px-5 text-center">
                 <h1 class="text-7xl font-bold uppercase text-slate-100">BLOG</h1>
                 <p class="text-xl font-semibold text-slate-300 mt-1">{{ config('app.name', 'Blog with SEO') }}</p>

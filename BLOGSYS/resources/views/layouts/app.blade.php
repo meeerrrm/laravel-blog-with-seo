@@ -11,10 +11,11 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
-        <!-- Scripts -->
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+<!-- CSS -->
+        <link rel="stylesheet" href="{{ asset('build/assets/app-afec4256.css') }}">
+<!-- Scripts -->
+        <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}">
+        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 @if(isset($additional))
         {{ $additional }}
 @endif
