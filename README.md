@@ -16,7 +16,7 @@ Open source project, created for optimize your own blog with Google SEO
 Clone the repository
 
 ```bash
-  git clone https://github.com/rahmathidayat9/laraschool
+  git clone https://github.com/meeerrrm/laravel-blog-with-seo.git
 ```
 Start
 ```bash
