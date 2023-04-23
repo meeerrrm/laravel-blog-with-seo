@@ -34,6 +34,7 @@ Start
 | Frontend - Tag Page | Done | 99% | 23 April 2023 | 23 April 2023 |
 | Frontend - Detail Blog Page | Done | 100% | 22 April 2023 | 23 April 2023 |
 | Frontend - SEO Config | Done |  99%| 23 April 2023 | 23 April 2023 |
+| Auto sitemap.xml | Pending | 0% | | |
 
 99% Means will update sometimes.
 
