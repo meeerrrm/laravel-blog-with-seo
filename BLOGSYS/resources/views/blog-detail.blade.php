@@ -18,19 +18,23 @@
         <meta name="article:published_time" content="{{ $blog->publish_date }}"/>
         <script type="application/ld+json">
         {
-          "@context": "https://schema.org",
-          "@type": "NewsArticle",
-          "headline": "{{ $blog->title }}",
-          "image": [
-            "{{ asset('assets/blog/'.$blog->thumnail) }}",
-           ],
-          "datePublished": "{{ $blog->publish_date }}T08:00:00+08:00",
-          "dateModified": "{{ date('Y-m-d',strtotime($blog->updated_at)) }}T09:20:00+08:00",
-          "author": [{
-              "@type": "Person",
-              "name": "{{ $blog->user->name }}",
-              "url": "https://entolrizky.com/"
+            "@context": "https://schema.org",
+            "@type": "NewsArticle",
+            "headline": "{{ $blog->title }}",
+            "image": [
+                "{{ asset('assets/blog/'.$blog->thumnail) }}",
+            ],
+            "datePublished": "{{ $blog->publish_date }}T08:00:00+08:00",
+            "dateModified": "{{ date('Y-m-d',strtotime($blog->updated_at)) }}T09:20:00+08:00",
+            "author": [{
+                "@type": "Person",
+                "name": "{{ $blog->user->name }}",
+                "url": "https://entolrizky.com/"
             }]
+            "publisher":{
+                "name": "{{ config('app.name', 'Blog with SEO') }}",
+                "url": "{{ url('/') }}"
+            }
         }
         </script>
     </x-slot>
@@ -53,7 +57,7 @@
                         <div class="flex flex-wrap">
                             <div class="w-1/3">
                                 <div class="rounded-full w-14 h-14 overflow-hidden mx-auto">
-                                    <img src="{{ asset('assets/picture/'.$blog->user->profile_picture) }}" class="h-14">
+                                    <img src="{{ asset('assets/picture/'.$blog->user->profile_picture) }}" alt="Profile Picture - {{ $blog->user->name}}" class="h-14">
                                 </div>
                             </div>
                             <div class="w-2/3 text-left">

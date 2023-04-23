@@ -1,4 +1,15 @@
 <x-landing-layout>
+	<x-slot name="seo_config">
+		<meta name="description" content="Tag blog {{ $tag }} dengan konten edukatif yang berisi seputar teknologi.">
+		<meta name="keywords" content="tag, blog, education, edukatif, teknologi, technology">
+		
+		<meta name="copyright"content="Entol Rizky Development" />
+		<meta name="owner" content="Entol Rizky Development" />
+		<meta name="author" content="Entol Rizky Development" />
+        <meta name="publisher" content="Entol Rizky Development">
+
+		<meta name="blogcatalog" />
+	</x-slot>
         <section class="p-8 grid grid-cols-1 content-center" id="header">
             <div class="max-w-6xl mx-auto px-5 text-center">
                 <p class="text-xl font-semibold text-slate-300 mt-16">Blog with Tag</p>

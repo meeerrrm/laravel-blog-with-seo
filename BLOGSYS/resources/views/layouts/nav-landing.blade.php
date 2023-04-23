@@ -26,7 +26,7 @@
 								<a href="{{ route('tag') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition"><span property="name">Tag</span></a>
 							</li>
 							<li>
-								<a href="https://set_to_your_portal_page" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition"><span property="name">Portal</span></a>
+								<a href="https://entolrizky.com" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition"><span property="name">Portal</span></a>
 							</li>
 						</ol>
 					</div>

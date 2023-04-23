@@ -19,10 +19,12 @@ Open source project, created for optimize your own blog with Google SEO
 | Backend - Auth Page | Done | 100% | 14 April 2023 | 15 April 2023 |
 | Backend - User Profile Management | Done | 100% | 14 April 2023 | 15 April 2023 |
 | Backend - Blog Management| Done | 99% | 15 April 2023 | 16 April 2023 |
-| Frontend - Landing Page | Pending | 95% | 22 April 2023 | |
+| Frontend - Landing Page | Pending | 99% | 22 April 2023 | 23 April 2023 |
 | Frontend - Tag Page | Done | 0% | 23 April 2023 | 23 April 2023 |
 | Frontend - Detail Blog Page | Done | 100% | 22 April 2023 | 23 April 2023 |
-| Frontend - SEO Config | On-Progress |  0%| 23 April 2023 | |
+| Frontend - SEO Config | Done |  99%| 23 April 2023 | 23 April 2023 |
+
+99% Means will update sometimes.
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@meeerrrm](https://github.com/meeerrrm) - Idea & Initial work
