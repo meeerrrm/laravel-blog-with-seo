@@ -11,7 +11,18 @@ Open source project, created for optimize your own blog with Google SEO
 - [Alpine.js v3.4.2](https://alpinejs.dev/) & [Vite.js v4.0.0](https://vitejs.dev/) - Javascript Framework
 - [MySQL v10.4.24](https://www.mysql.com/) - Database
 
+## ⚡ How to develop
 
+Clone the repository
+
+```bash
+  git clone https://github.com/rahmathidayat9/laraschool
+```
+Start
+```bash
+  npm install & npm run dev
+  php artisan serve
+```
 
 ## 📝 Project Progress <a name = "project_progress"></a>
 | Page Name        | Status           | %  | Start Due | Finish Due |
