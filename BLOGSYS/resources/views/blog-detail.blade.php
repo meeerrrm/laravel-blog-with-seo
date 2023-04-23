@@ -5,7 +5,7 @@
         <section class="p-4 py-24" id="header">
             <div class="max-w-4xl mx-auto px-5 text-center">
                 <div class="w-full md:h-96 bg-slate-900 rounded-2xl overflow-hidden" id="imagePlace">
-                    <img src="{{ asset('assets/blog/'.$blog->thumnail) }}" class="mx-auto" alt="{{ $blog->title }}">
+                    <img src="{{ asset('assets/blog/'.$blog->thumnail) }}" class="mx-auto h-full" alt="{{ $blog->title }}">
                 </div>
                 <h1 class="text-4xl font-bold uppercase text-slate-100 mt-10">{{ $blog->title }}</h1>
                 <div class="mt-4">
