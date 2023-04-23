@@ -4,7 +4,7 @@
     </x-slot>
 	<x-slot name="seo_config">
 		<meta name="description" content="{{ $blog->description }}">
-		<meta name="keywords" content="@foreach(json_decode($blog->tag) as $val){{ $val }}, @endforeach{{ strtolower($blog->user->name) }}">
+		<meta name="keywords" content="@foreach(json_decode($blog->tag) as $val){{ $val }}, @endforeach{{ $blog->keyword }},{{ strtolower($blog->user->name) }}">
 		<meta name="author" content="{{ $blog->user->name }}" />
         <meta name="publisher" content="Entol Rizky Development">
 
