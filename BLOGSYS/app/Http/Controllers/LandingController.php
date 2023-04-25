@@ -48,4 +48,15 @@ class LandingController extends Controller
         return BlogPost::release()->where('tag','LIKE','%'.$tag.'%')->get();
 
     }
+    public function sitemap()
+    {
+        $route = [
+            ['index','1.00'],
+            ['tag','0.80'],
+        ];
+        $blog_list = BlogPost::release()->get();
+        $tag = $this->get_all_tag();
+        // dd($route);
+        return response()->view('sitemap',['route'=>$route,'blog_list'=>$blog_list,'tag_list'=>$tag])->header('Content-Type', 'text/xml');
+    }
 }
