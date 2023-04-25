@@ -19,8 +19,8 @@
 <!-- Scripts -->
         <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}">
         <link rel="stylesheet" href="{{ asset('build/assets/main.js') }}">
-        
-@vite(['resources/css/app.css', 'resources/js/app.js'])
+
+{{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 
 @if(isset($seo_config))
 <!-- SEO -->
