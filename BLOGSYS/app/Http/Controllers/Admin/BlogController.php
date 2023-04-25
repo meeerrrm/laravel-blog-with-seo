@@ -94,9 +94,14 @@ class BlogController extends FunctionController
         ]);
         return redirect(route('admin.blog.index'))->with('status','blog-updated');
     }
-    public function delete(Request $request): RedirectResponse
+    public function destroy(Request $request): RedirectResponse
     {
-        # code...
+        $blog = BlogPost::findOrFail($request->blog_id);
+        if($blog->delete()){
+            return redirect(route('admin.blog.index'))->with('status','blog-deleted');
+        }
+        return redirect(route('admin.blog.index'))->with('status','blog-unsuccess-delete');
+        
     }
 
 }

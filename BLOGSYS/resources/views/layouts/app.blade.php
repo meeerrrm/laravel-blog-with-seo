@@ -8,14 +8,16 @@
         <title>{{ config('app.name', 'Entol Rizky') }}</title>
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('assets/logo/logo.png') }}">
 
-        <!-- Fonts -->
+<!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-{{-- <!-- CSS -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app-afec4256.css') }}">
+<!-- CSS -->
+        <link rel="stylesheet" href="{{ asset('build/assets/main.css') }}">
 <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}"> --}}
+        <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/main.js') }}">
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
 @if(isset($additional))
         {{ $additional }}
 @endif

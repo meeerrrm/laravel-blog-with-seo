@@ -48,18 +48,6 @@ Route::middleware('auth')->group(function () {
                     Route::put('/','update')->name('update');
                     Route::delete('/','destroy')->name('destroy');
             });
-            Route::controller(App\Http\Controllers\Admin\TagController::class)
-                ->prefix('tag')
-                ->name('tag.')
-                ->group(function(){
-                    Route::get('/','index')->name('index');
-                    Route::get('/create','create')->name('create');
-                    Route::get('/update/{id}','edit')->name('edit');
-
-                    Route::post('/','store')->name('store');
-                    Route::put('/','update')->name('update');
-                    Route::delete('/','destroy')->name('destroy');
-            });
     });
 
 require __DIR__.'/auth.php';

@@ -27,6 +27,24 @@
                             class="bg-green-500 text-white py-4 px-8 block rounded-lg shadow"
                         >Your blog has updated.</p>
 @endif
+@if (session('status') === 'blog-deleted')
+                        <p
+                            x-data="{ show: true }"
+                            x-show="show"
+                            x-transition
+                            x-init="setTimeout(() => show = false, 3000)"
+                            class="bg-green-500 text-white py-4 px-8 block rounded-lg shadow"
+                        >Your blog has Deleted.</p>
+@endif
+@if (session('status') === 'blog-unsuccess-delete')
+                        <p
+                            x-data="{ show: true }"
+                            x-show="show"
+                            x-transition
+                            x-init="setTimeout(() => show = false, 3000)"
+                            class="bg-red-500 text-white py-4 px-8 block rounded-lg shadow"
+                        >Your blog doesn`t deleted.</p>
+@endif
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                             <div class="p-6 px-8 text-gray-900">
                                 <div class="relative overflow-x-auto">
@@ -45,6 +63,14 @@
                                                 <td class="px-6 py-3 text-center">{{ $d->title }}</td>
                                                 <td class="px-6 py-3 text-center">
                                                     <x-a-button-edit href="{{ route('admin.blog.edit',$d->id) }}">{{ __('Update') }}</x-a-button-edit>
+                                                    <form method="POST" action="{{ route('admin.blog.destroy') }}" class="inline">
+                                                        @csrf
+
+                                                        @method('delete')
+                                                        
+                                                        <input type="hidden" name="blog_id" value="{{ $d->id }}">
+                                                        <x-danger-button>{{ __('Delete') }}</x-danger-button>
+                                                    </form>
                                                 </td>
                                             </tr>
 @endforeach                     
