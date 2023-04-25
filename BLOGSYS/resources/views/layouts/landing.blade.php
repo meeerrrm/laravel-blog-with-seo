@@ -14,11 +14,11 @@
 @endif
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo/logo.png') }}" />
         <link rel="canonical" href="{{ Request::url() }}" />
-<!-- CSS -->
+{{-- <!-- CSS -->
         <link rel="stylesheet" href="{{ asset('build/assets/app-afec4256.css') }}">
 <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}">
-        {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
+        <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}"> --}}
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
 @if(isset($seo_config))
 <!-- SEO -->
         {{ $seo_config }}

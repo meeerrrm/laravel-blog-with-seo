@@ -70,7 +70,7 @@ return [
     */
 
     'links' => [
-        base_path('/../public_html/assets') => storage_path('app/public'),
+        base_path('/../blog.entolrizky.com/assets') => storage_path('app/public'),
     ],
 
 ];
