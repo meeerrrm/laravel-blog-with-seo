@@ -17,7 +17,10 @@ class LandingController extends Controller
     public function detail($uniq)
     {
         $blog = BlogPost::where('uniq',$uniq)->first();
-        return view('blog-detail',['blog'=>$blog]);
+        if(isset($blog->title)){
+            return view('blog-detail',['blog'=>$blog]);
+        }
+        return abort(404);
     }
     public function tag()
     {

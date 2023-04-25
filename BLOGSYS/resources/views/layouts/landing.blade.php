@@ -14,20 +14,22 @@
 @endif
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo/logo.png') }}" />
         <link rel="canonical" href="{{ Request::url() }}" />
+@if($_SERVER['REMOTE_ADDR'] === "127.0.0.1")
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
+@else
 <!-- CSS -->
         <link rel="stylesheet" href="{{ asset('build/assets/main.css') }}">
 <!-- Scripts -->
         <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}">
         <link rel="stylesheet" href="{{ asset('build/assets/main.js') }}">
-
-{{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
-
+@endif
 @if(isset($seo_config))
 <!-- SEO -->
         {{ $seo_config }}
 @endif
     </head>
     <body class="bg-slate-800">
+        
         @include('layouts.nav-landing')
         {{ $slot }}
 		<div class="w-full rounded-lg border-b-2 border-sky-400 mx-auto" data-aos-anchor-placement="center-bottom" data-aos="zoom-in"></div>

@@ -17,6 +17,7 @@
             </div>
             <div class="max-w-6xl mx-auto px-5 pt-24 pb-32">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+@if(count($blogs) > 0)
 @foreach($blogs as $blog)
 					<div>
 						<a href="{{ route('blog.detail',$blog->uniq) }}" class="h-full w-full">
@@ -28,12 +29,17 @@
 									<p>
 										<span class="text-sky-400 font-thin hover:text-sky-600">{{ json_decode($blog->tag)[0] }}</span>
 									</p>
-									<h1 class="text-white font-bold text-2xl pt-2">{{ $blog->title }}</h1>
+									<h2 class="text-white font-bold text-2xl pt-2">{{ $blog->title }}</h2>
 								</div>
 							</div>
 						</a>
 					</div>
 @endforeach
+@else
+					<div class="md:col-span-3 h-[30vh]">
+						<h2 class="text-white text-2xl">Blog with <b>{{ $tag }}</b> tag not found.</h2>
+					</div>
+@endif
                 </div>
             </div>
         </section>
