@@ -5,7 +5,7 @@ import tailwindcss from 'tailwindcss';
 export default defineConfig({
     plugins: [
         laravel({
-            publicDirectory: '../public_html',
+            publicDirectory: '../blog.entolrizky.com',
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
