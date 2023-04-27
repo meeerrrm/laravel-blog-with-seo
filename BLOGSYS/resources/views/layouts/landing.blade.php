@@ -38,6 +38,7 @@
 			<p class="font-normal text-white mr-0 ml-auto">Crafted with <i class="fa-solid fa-heart text-red-500 mx-1"></i> by <a href="https://entolrizky.com/" class="hover:text-sky-400 transition">Mohammad Entol Rizky Muslimin</a></p>
 		</div>
 	<!-- Javascript -->
+		<script type="text/javascript" src="https://entolrizky.com/assets/js/alpine.js"></script>
 		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="https://kit.fontawesome.com/c8151e59d5.js"></script>
 @if(isset($js))
