@@ -36,6 +36,7 @@ class BlogController extends FunctionController
             'content'=>['required'],
             'publish_date'=>['required']
         ]);
+        $request->uniq = $this->remove_special($request->uniq);
         if($this->uniq_blog_check($request->uniq) === true){
             $thumnail = $this->upload_image($request->file('thumnail'),'blog',$request->uniq);
             $blog = BlogPost::create([
@@ -81,6 +82,7 @@ class BlogController extends FunctionController
         if($request->hasFile($request->thumnail)){
             $thumnail = $this->upload_image($request->file('thumnail'),'blog',$request->uniq);
         }
+        $request->uniq = $this->remove_special($request->uniq);
         $blog = BlogPost::whereId($request->id)->update([
             'user_id'=>$request->user_id,
             'thumnail'=>$thumnail,

@@ -28,8 +28,9 @@ class FunctionController extends Controller
         }
         return true;
     }
-    public function insert_tag($tag)
+    public function remove_special($text)
     {
-        
+        $ilegal_char = ["!","@","#","$","%","^","&","*","="];
+        return str_replace($ilegal_char,"",$text);
     }
 }
