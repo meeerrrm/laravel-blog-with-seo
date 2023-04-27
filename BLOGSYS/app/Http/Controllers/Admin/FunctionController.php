@@ -30,7 +30,7 @@ class FunctionController extends Controller
     }
     public function remove_special($text)
     {
-        $ilegal_char = ["!","@","#","$","%","^","&","*","="];
+        $ilegal_char = ["!","@","#","$","%","^","&","*","=","?",":","=","+",";","`","~"];
         return str_replace($ilegal_char,"",$text);
     }
 }
