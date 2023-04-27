@@ -74,10 +74,18 @@
 <!-- place for config your content css -->
         <script>
             $(document).ready(function(){	
-                $('#mainContent').closest('div').find('ol').addClass('list-decimal ml-4 mt-2');
-                $('#mainContent').closest('div').find('ul').addClass('list-disc ml-4 mt-2');
-                $('#mainContent').closest('div').find('li').addClass('mb-4 font-bold text-white');
+                $('#mainContent').closest('div').find('ol').addClass('list-decimal ml-6 mt-2');
+                $('#mainContent').closest('div').find('ul').addClass('list-disc ml-6 mt-2');
+                $('#mainContent').closest('div').find('li').addClass('mb-4 font-bold');
                 $('#mainContent').closest('div').find('p').addClass('mt-2 font-light text-slate-300');
+
+                $('#mainContent').closest('div').find('h1').addClass('font-bold text-xl text-white');
+                $('#mainContent').closest('div').find('h2').addClass('font-bold text-xl text-white');
+                $('#mainContent').closest('div').find('h3').addClass('font-bold text-xl text-white');
+                $('#mainContent').closest('div').find('h4').addClass('font-bold text-xl text-white');
+                $('#mainContent').closest('div').find('h5').addClass('font-bold text-xl text-white');
+                $('#mainContent').closest('div').find('h6').addClass('font-bold text-xl text-white');
+                
             });
         </script>
     </x-slot>
