@@ -74,8 +74,8 @@
 <!-- place for config your content css -->
         <script>
             $(document).ready(function(){	
-                $('#mainContent').closest('div').find('ol').addClass('list-decimal ml-6 mt-2');
-                $('#mainContent').closest('div').find('ul').addClass('list-disc ml-6 mt-2');
+                $('#mainContent').closest('div').find('ol').addClass('list-decimal ml-4 mt-2');
+                $('#mainContent').closest('div').find('ul').addClass('list-disc ml-4 mt-2');
                 $('#mainContent').closest('div').find('li').addClass('mb-4 font-bold');
                 $('#mainContent').closest('div').find('p').addClass('mt-2 font-light text-slate-300');
 
