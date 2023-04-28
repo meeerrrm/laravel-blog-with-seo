@@ -1,5 +1,4 @@
-
-# Laravel - Blog with Google SEO
+!["Laravel - Blog With Google SEO"](https://repository-images.githubusercontent.com/627847009/1e9975fa-98d5-491f-ac49-53fbbd42cf8e)
 
 Open source project, created for optimize your own blog with Google SEO
 
