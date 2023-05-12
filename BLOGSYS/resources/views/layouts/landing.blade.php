@@ -6,6 +6,7 @@
         <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
 
 @if(isset($title))
         {{ $title }}
@@ -46,6 +47,15 @@
 @endif
 		<script>
 			AOS.init();
+        </script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W10XXDJ3B"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-4W10XXDJ3B');
         </script>
     </body>
 </html>
