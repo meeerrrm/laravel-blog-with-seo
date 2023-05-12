@@ -17,18 +17,18 @@
 					:class="{'flex fixed ': showMenu, 'hidden': !showMenu }">
 					<div 
 						class="flex-col pb-8 md:pb-0 w-full relative overflow-hidden bg-slate-800 rounded-lg md:bg-transparent md:overflow-visible md:rounded-none md:relative md:flex md:flex-row border-b-2 border-b-sky-900 sm:border-none">
-						<ol class="flex flex-col items-start justify-center w-full text-black-700 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center pt-[85px] md:pt-0">
+						<ul class="flex flex-col items-start justify-center w-full text-black-700 text-center lg:space-x-8 md:w-2/3 md:mt-0 md:flex-row md:items-center pt-[85px] md:pt-0">
 							<li><div class="border-t-2 border-t-sky-900 w-full mb-3 md:hidden"></div></li>
 							<li>
-								<a href="{{ route('index') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition"><span property="name">Beranda</span></a>
+								<a href="{{ route('index') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Beranda</a>
 							</li>
 							<li>
-								<a href="{{ route('tag') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition"><span property="name">Tag</span></a>
+								<a href="{{ route('tag') }}" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Tag</a>
 							</li>
 							<li>
-								<a href="https://entolrizky.com" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition"><span property="name">Portal</span></a>
+								<a href="https://entolrizky.com" class="inline-block w-full text-xl py-2 md:py-0 md:text-base md:w-auto px-5 text-white hover:text-sky-500 transition">Portal</a>
 							</li>
-						</ol>
+						</ul>
 					</div>
 				</div>
 				<div 

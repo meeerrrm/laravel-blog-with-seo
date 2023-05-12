@@ -38,7 +38,7 @@
         }
         </script>
     </x-slot>
-        <section class="p-4 py-24" id="header">
+        <article class="p-4 py-24" id="header">
             <div class="max-w-4xl mx-auto px-5 text-center">
                 <div class="w-full md:h-96 bg-slate-900 rounded-2xl overflow-hidden" id="imagePlace">
                     <img src="{{ asset('assets/blog/'.$blog->thumnail) }}" class="mx-auto h-full" alt="{{ $blog->title }}">
@@ -68,7 +68,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </article>
     <x-slot name="js">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <!-- place for config your content css -->
