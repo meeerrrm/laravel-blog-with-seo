@@ -1,5 +1,4 @@
-
-# Laravel - Blog with Google SEO
+!["Laravel - Blog With Google SEO"](https://repository-images.githubusercontent.com/627847009/1e9975fa-98d5-491f-ac49-53fbbd42cf8e)
 
 Open source project, created for optimize your own blog with Google SEO
 
@@ -34,7 +33,7 @@ Start
 | Frontend - Tag Page | Done | 99% | 23 April 2023 | 23 April 2023 |
 | Frontend - Detail Blog Page | Done | 100% | 22 April 2023 | 23 April 2023 |
 | Frontend - SEO Config | Done |  99%| 23 April 2023 | 23 April 2023 |
-| Auto sitemap.xml | Pending | 0% | | |
+| Auto sitemap.xml | Done |  99%| 25 April 2023 | 25 April 2023 |
 
 99% Means will update sometimes.
 
