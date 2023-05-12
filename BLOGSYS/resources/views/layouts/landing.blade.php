@@ -28,6 +28,15 @@
 <!-- SEO -->
         {{ $seo_config }}
 @endif
+<!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W10XXDJ3B"></script>
+        <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', 'G-4W10XXDJ3B');
+        </script>
     </head>
     <body class="bg-slate-800">
         
@@ -47,15 +56,6 @@
 @endif
 		<script>
 			AOS.init();
-        </script>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-4W10XXDJ3B"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'G-4W10XXDJ3B');
         </script>
     </body>
 </html>
