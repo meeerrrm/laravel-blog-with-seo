@@ -1,6 +1,6 @@
 <x-landing-layout>
     <x-slot name="title">
-        <title>{{ $blog->title }}</title>
+        <title>{{ $blog->title }} | Blog | {{ config('app.name', 'Blog with SEO') }}</title>
     </x-slot>
 	<x-slot name="seo_config">
 		<meta name="description" content="{{ $blog->description }}">
