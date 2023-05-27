@@ -1,6 +1,5 @@
 <x-app-layout>
     <x-slot name="additional">
-        <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     </x-slot>
     <x-slot name="header">
@@ -107,16 +106,19 @@
                     }
                 }
         </script>
-        <script>
+        <script src="{{ asset('build/plugins/ck5/build/ckeditor.js') }}"></script>
+		<script>
             ClassicEditor
                 .create( document.querySelector( '#content' ),{
+					licenseKey: '',
                     ckfinder:{
                         uploadUrl: '{{ route("admin.blog.image_content_upload")."?_token=".csrf_token() }}'
-                    }
-                } )
+                    },
+					
+				} )
                 .catch( error => {
                     console.error( error );
                 } );
-        </script>  
+		</script>
     </x-slot>
 </x-app-layout>

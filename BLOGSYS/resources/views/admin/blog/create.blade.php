@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="additional">
-        <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+        <style></style>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     </x-slot>
     <x-slot name="header">
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="py-2">
                                         <x-input-label for="content" value="{{ __('Content') }}" />
-                                        <textarea name="content" id="content" cols="30" rows="10"></textarea>
+                                        <textarea name="content" id="content" cols="30" rows="10" class="prose prose-slate max-w-none"></textarea>
                                         <x-input-error :messages="$errors->BlogStoreRequest->get('content')" class="mt-2" />
                                     </div>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -102,16 +102,19 @@
                     }
                 }
         </script>
-        <script>
+        <script src="{{ asset('build/plugins/ck5/build/ckeditor.js') }}"></script>
+		<script>
             ClassicEditor
                 .create( document.querySelector( '#content' ),{
+					licenseKey: '',
                     ckfinder:{
                         uploadUrl: '{{ route("admin.blog.image_content_upload")."?_token=".csrf_token() }}'
-                    }
-                } )
+                    },
+					
+				} )
                 .catch( error => {
                     console.error( error );
                 } );
-        </script>        
+		</script>
     </x-slot>
 </x-app-layout>

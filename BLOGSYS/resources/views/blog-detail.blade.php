@@ -38,7 +38,7 @@
         }
         </script>
     </x-slot>
-        <article class="p-4 py-24" id="header">
+        <div class="p-4 py-24" id="header">
             <div class="max-w-4xl mx-auto px-5 text-center">
                 <div class="w-full md:h-96 bg-slate-900 rounded-2xl overflow-hidden" id="imagePlace">
                     <img src="{{ asset('assets/blog/'.$blog->thumnail) }}" class="mx-auto h-full" alt="{{ $blog->title }}">
@@ -49,9 +49,9 @@
                     <a href="{{ route('tag.detail',$tag) }}" class="bg-sky-700 p-1 px-4 rounded-full text-slate-100 transition-all hover:bg-sky-500 text-sm inline-block mt-1">{{ $tag }}</a>
 @endforeach
                 </div>
-                <div class="text-left text-slate-300 mt-8" id="mainContent">
+                <article class="text-left text-slate-300 mt-8 prose prose-slate max-w-none" id="mainContent">
 {!! json_decode($blog->content) !!}
-                </div>
+                </article>
                 <div class="text-slate-300 mt-24">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="flex flex-wrap">
@@ -68,25 +68,8 @@
                     </div>
                 </div>
             </div>
-        </article>
+        </div>
     <x-slot name="js">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
-<!-- place for config your content css -->
-        <script>
-            $(document).ready(function(){	
-                $('#mainContent').closest('div').find('ol').addClass('list-decimal ml-4 mt-2');
-                $('#mainContent').closest('div').find('ul').addClass('list-disc ml-4 mt-2');
-                $('#mainContent').closest('div').find('li').addClass('mb-4 font-bold');
-                $('#mainContent').closest('div').find('p').addClass('mt-2 font-light text-slate-300');
-
-                $('#mainContent').closest('div').find('h1').addClass('font-bold text-xl text-white');
-                $('#mainContent').closest('div').find('h2').addClass('font-bold text-xl text-white');
-                $('#mainContent').closest('div').find('h3').addClass('font-bold text-xl text-white');
-                $('#mainContent').closest('div').find('h4').addClass('font-bold text-xl text-white');
-                $('#mainContent').closest('div').find('h5').addClass('font-bold text-xl text-white');
-                $('#mainContent').closest('div').find('h6').addClass('font-bold text-xl text-white');
-                
-            });
-        </script>
     </x-slot>
 </x-landing-layout>
