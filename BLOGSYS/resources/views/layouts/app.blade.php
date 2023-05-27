@@ -15,10 +15,9 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 @else
 <!-- CSS -->
-        <link rel="stylesheet" href="{{ asset('build/assets/main.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/css/main.css') }}">
 <!-- Scripts -->
-        <link rel="stylesheet" href="{{ asset('build/assets/app-919ba201.js') }}">
-        <link rel="stylesheet" href="{{ asset('build/assets/main.js') }}">
+        <link rel="stylesheet" href="{{ asset('build/assets/js/main2.js') }}">
 @endif
 @if(isset($additional))
         {{ $additional }}
