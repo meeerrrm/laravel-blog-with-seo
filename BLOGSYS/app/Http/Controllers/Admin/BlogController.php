@@ -77,7 +77,6 @@ class BlogController extends FunctionController
             'content'=>['required'],
             'publish_date'=>['required']
         ]);
-        
         $request->uniq = $this->remove_special($request->uniq);
         $thumnail = $request->old_thumnail;
         if($request->hasFile($request->thumnail)){

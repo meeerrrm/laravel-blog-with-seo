@@ -49,7 +49,7 @@
                     <a href="{{ route('tag.detail',$tag) }}" class="bg-sky-700 p-1 px-4 rounded-full text-slate-100 transition-all hover:bg-sky-500 text-sm inline-block mt-1">{{ $tag }}</a>
 @endforeach
                 </div>
-                <article class="text-left text-slate-300 mt-8 prose prose-slate max-w-none" id="mainContent">
+                <article class="text-left text-slate-300 mt-8 prose lg:prose-xl" id="mainContent">
 {!! json_decode($blog->content) !!}
                 </article>
                 <div class="text-slate-300 mt-24">
