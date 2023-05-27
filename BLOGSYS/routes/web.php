@@ -53,6 +53,7 @@ Route::middleware('auth')->group(function () {
                     Route::get('/update/{id}','edit')->name('edit');
 
                     Route::post('/','store')->name('store');
+                    Route::post('/media-upload','image_content_upload')->name('image_content_upload');
                     Route::put('/','update')->name('update');
                     Route::delete('/','destroy')->name('destroy');
             });

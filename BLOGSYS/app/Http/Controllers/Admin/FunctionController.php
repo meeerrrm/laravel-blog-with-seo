@@ -33,4 +33,12 @@ class FunctionController extends Controller
         $ilegal_char = ["!","@","#","$","%","^","&","*","=","?",":","=","+",";","`","~"];
         return str_replace($ilegal_char,"",$text);
     }
+
+    public function image_content_upload(Request $request)
+    {
+        $image = $request->file('upload');
+        $saved_name = time().'.'.$image->getClientOriginalExtension();
+        $path = $image->storeAs('public/blog/media',$saved_name);
+        return response()->json(['fileName'=>$saved_name,'uploaded'=>1,'url'=> url('assets/blog/media/'.$saved_name)]);
+    }
 }

@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="additional">
-        <script src="https://cdn.tiny.cloud/1/yekqlq7bzvgmppefyvzt59s50ccq4mtt1fualcap3dg81523/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
     </x-slot>
     <x-slot name="header">
@@ -56,7 +56,7 @@
                                     </div>
                                     <div class="py-2">
                                         <x-input-label for="content" value="{{ __('Content') }}" />
-                                        <textarea name="content" id="" cols="30" rows="10"> {{json_decode($blog->content)}}</textarea>
+                                        <textarea name="content" id="content" cols="30" rows="10"> {{json_decode($blog->content)}}</textarea>
                                         <x-input-error :messages="$errors->BlogStoreRequest->get('content')" class="mt-2" />
                                     </div>
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -108,13 +108,15 @@
                 }
         </script>
         <script>
-            tinymce.init({
-                selector: 'textarea',
-                plugins: 'anchor autolink charmap codesample emoticons image link lists media searchreplace table visualblocks wordcount checklist mediaembed casechange export formatpainter pageembed linkchecker a11ychecker tinymcespellchecker permanentpen powerpaste advtable advcode editimage tinycomments tableofcontents footnotes mergetags autocorrect typography inlinecss',
-                toolbar: 'undo redo | blocks fontfamily fontsize | bold italic underline strikethrough | link image media table mergetags | addcomment showcomments | spellcheckdialog a11ycheck typography | align lineheight | checklist numlist bullist indent outdent | emoticons charmap | removeformat',
-                tinycomments_mode: 'embedded',
-                menubar: 'edit insert view format table tools help',
-            });
-        </script>
+            ClassicEditor
+                .create( document.querySelector( '#content' ),{
+                    ckfinder:{
+                        uploadUrl: '{{ route("admin.blog.image_content_upload")."?_token=".csrf_token() }}'
+                    }
+                } )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>  
     </x-slot>
 </x-app-layout>
