@@ -19,7 +19,13 @@ Clone the repository
 ```
 Start
 ```bash
-  npm install & npm run dev
+  cd BLOGSYS
+  composer install
+  npm install
+
+  copy .env.example .env
+  php artisan key:generate
+  
   php artisan serve
 ```
 
