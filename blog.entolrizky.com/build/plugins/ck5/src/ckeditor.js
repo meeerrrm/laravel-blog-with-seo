@@ -5,38 +5,41 @@
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor.js';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
+import AutoLink from '@ckeditor/ckeditor5-link/src/autolink.js';
 import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
-import CKBox from '@ckeditor/ckeditor5-ckbox/src/ckbox.js';
+import CKFinderUploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code.js';
 import CodeBlock from '@ckeditor/ckeditor5-code-block/src/codeblock.js';
 import DataFilter from '@ckeditor/ckeditor5-html-support/src/datafilter.js';
+import DataSchema from '@ckeditor/ckeditor5-html-support/src/dataschema.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
-import FontSize from '@ckeditor/ckeditor5-font/src/fontsize.js';
+import GeneralHtmlSupport from '@ckeditor/ckeditor5-html-support/src/generalhtmlsupport.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
+import Highlight from '@ckeditor/ckeditor5-highlight/src/highlight.js';
+import HtmlComment from '@ckeditor/ckeditor5-html-support/src/htmlcomment.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
+import ImageInsert from '@ckeditor/ckeditor5-image/src/imageinsert.js';
 import ImageResize from '@ckeditor/ckeditor5-image/src/imageresize.js';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
 import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar.js';
 import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload.js';
 import Indent from '@ckeditor/ckeditor5-indent/src/indent.js';
+import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
 import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
-import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties.js';
-import Markdown from '@ckeditor/ckeditor5-markdown-gfm/src/markdown.js';
 import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
 import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice.js';
-import PictureEditing from '@ckeditor/ckeditor5-image/src/pictureediting.js';
-import SelectAll from '@ckeditor/ckeditor5-select-all/src/selectall.js';
-import SpecialCharacters from '@ckeditor/ckeditor5-special-characters/src/specialcharacters.js';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat.js';
+import SourceEditing from '@ckeditor/ckeditor5-source-editing/src/sourceediting.js';
 import Table from '@ckeditor/ckeditor5-table/src/table.js';
-import TableProperties from '@ckeditor/ckeditor5-table/src/tableproperties';
 import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar.js';
 import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
-import WordCount from '@ckeditor/ckeditor5-word-count/src/wordcount.js';
+import Underline from '@ckeditor/ckeditor5-basic-styles/src/underline.js';
 
 class Editor extends ClassicEditor {}
 
@@ -44,65 +47,75 @@ class Editor extends ClassicEditor {}
 Editor.builtinPlugins = [
 	Alignment,
 	Autoformat,
+	AutoLink,
 	BlockQuote,
 	Bold,
-	CKBox,
+	CKFinderUploadAdapter,
 	CloudServices,
+	Code,
 	CodeBlock,
 	DataFilter,
+	DataSchema,
 	Essentials,
-	FontSize,
+	GeneralHtmlSupport,
 	Heading,
+	Highlight,
+	HtmlComment,
 	Image,
 	ImageCaption,
+	ImageInsert,
 	ImageResize,
 	ImageStyle,
 	ImageToolbar,
 	ImageUpload,
 	Indent,
+	IndentBlock,
 	Italic,
 	Link,
 	List,
-	ListProperties,
-	Markdown,
 	MediaEmbed,
 	Paragraph,
 	PasteFromOffice,
-	PictureEditing,
-	SelectAll,
-	SpecialCharacters,
+	RemoveFormat,
+	SourceEditing,
 	Table,
-	TableProperties,
 	TableToolbar,
 	TextTransformation,
-	WordCount
+	Underline
 ];
 
 // Editor configuration.
 Editor.defaultConfig = {
 	toolbar: {
 		items: [
+			'undo',
+			'redo',
+			'|',
 			'heading',
+			'blockQuote',
 			'|',
 			'bold',
 			'italic',
+			'underline',
+			'alignment',
+			'|',
 			'link',
-			'fontSize',
+			'removeFormat',
 			'bulletedList',
 			'numberedList',
 			'|',
-			'alignment',
 			'outdent',
 			'indent',
-			'codeBlock',
 			'|',
 			'imageUpload',
-			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
-			'undo',
-			'redo'
-		]
+			'-',
+			'code',
+			'sourceEditing',
+			'codeBlock'
+		],
+		shouldNotGroupWhenFull: true
 	},
 	language: 'en',
 	image: {
@@ -118,8 +131,7 @@ Editor.defaultConfig = {
 		contentToolbar: [
 			'tableColumn',
 			'tableRow',
-			'mergeTableCells',
-			'tableProperties'
+			'mergeTableCells'
 		]
 	}
 };
