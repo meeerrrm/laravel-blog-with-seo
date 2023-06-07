@@ -21,7 +21,7 @@ Clone the repository
 ```
 Start
 ```bash
-  cd BLOGSYS
+  cd src/BLOGSYS
   composer install
   npm install
 
