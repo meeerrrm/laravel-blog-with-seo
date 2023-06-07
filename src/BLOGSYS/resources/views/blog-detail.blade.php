@@ -100,8 +100,8 @@
                 "@id": "{{ route('blog.detail',$blog->uniq) }}#primaryimage",
                 "url": "{{ asset('assets/blog/'.$blog->thumnail) }}",
                 "contentUrl": "{{ asset('assets/blog/'.$blog->thumnail) }}",
-                "width": 720,
-                "height": 384,
+                "width": 1920,
+                "height": 1080,
                 "caption": "{{ $blog->title }}"
               },
               {
