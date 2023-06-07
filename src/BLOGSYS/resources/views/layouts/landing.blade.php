@@ -37,7 +37,7 @@
                 gtag('config', 'G-4W10XXDJ3B');
         </script>
     </head>
-    <body class="bg-slate-200">
+    <body class="bg-gray-100">
         
         @include('layouts.nav-landing')
         {{ $slot }}
