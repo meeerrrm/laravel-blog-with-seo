@@ -43,16 +43,16 @@
                 <div class="w-full md:h-96 bg-slate-900 rounded-2xl overflow-hidden" id="imagePlace">
                     <img src="{{ asset('assets/blog/'.$blog->thumnail) }}" class="mx-auto h-full" alt="{{ $blog->title }}">
                 </div>
-                <h1 class="text-4xl font-bold uppercase text-slate-100 mt-10">{{ $blog->title }}</h1>
+                <h1 class="text-4xl font-bold uppercase text-sky-700 mt-10">{{ $blog->title }}</h1>
                 <div class="mt-4">
 @foreach(json_decode($blog->tag) as $tag)
                     <a href="{{ route('tag.detail',$tag) }}" class="bg-sky-700 p-1 px-4 rounded-full text-slate-100 transition-all hover:bg-sky-500 text-sm inline-block mt-1">{{ $tag }}</a>
 @endforeach
                 </div>
-                <article class="text-left text-slate-300 mt-8 prose lg:prose-xl" id="mainContent">
+                <article class="text-left mt-8 format lg:format-lg format-red max-w-none" id="mainContent">
 {!! json_decode($blog->content) !!}
                 </article>
-                <div class="text-slate-300 mt-24">
+                <div class="text-sky-900 mt-24">
                     <div class="grid grid-cols-1 md:grid-cols-2">
                         <div class="flex flex-wrap">
                             <div class="w-1/3">
@@ -61,7 +61,7 @@
                                 </div>
                             </div>
                             <div class="w-2/3 text-left">
-                                <h3 class="text-slate-100 font-bold">{{ strtoupper($blog->user->name) }}</h3>
+                                <h3 class="text-sky-800 font-bold">{{ strtoupper($blog->user->name) }}</h3>
                                 <p>Publish at <b>{{ date('d F Y',strtotime($blog->publish_date)) }}</b></p>
                             </div>
                         </div>
