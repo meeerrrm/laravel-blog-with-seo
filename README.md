@@ -51,5 +51,3 @@ Start
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@meeerrrm](https://github.com/meeerrrm) - Idea & Initial work
-
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fmeeerrrm%2Flaravel-blog-with-seo&count_bg=%2379C83D&title_bg=%23555555&icon=awesomelists.svg&icon_color=%23E7E7E7&title=LOOK&edge_flat=false)](https://hits.seeyoufarm.com)
