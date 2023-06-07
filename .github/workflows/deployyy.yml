@@ -13,7 +13,7 @@ jobs:
     - name: 📂 Sync files
       uses: nogsantos/scp-deploy@master
       with:
-        src: ./dist/*
+        src: ./src/*
         host: ${{ secrets.SSH_HOST }}
         remote: ${{ secrets.SSH_PATH }}
         port: ${{ secrets.SSH_PORT }}
