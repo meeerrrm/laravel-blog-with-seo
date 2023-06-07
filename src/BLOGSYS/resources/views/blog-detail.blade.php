@@ -46,17 +46,11 @@
                 },
                 "thumbnailUrl": "{{ asset('assets/blog/'.$blog->thumnail) }}",
                 "keywords": [
-@foreach(explode(',',$blog->keyword) as $kw)
-                  "{{ $kw }}",
+@foreach(explode(',',$blog->keyword) as $key => $kw)
+                  "{{ $kw }}"@if($key != array_key_last(explode(',',$blog->keyword))),@endif
 @endforeach
                 ],
-                "articleSection": [
-@foreach($newest as $nw)
-                  "{{ $nw->title }}",
-@endforeach
-                ],
-                "inLanguage": "en-US"
-                ],
+                "inLanguage": "en-US",
                 "video": [
                   {
                     "@id": "{{ route('blog.detail',$blog->uniq) }}#video"
@@ -100,8 +94,8 @@
                 "@id": "{{ route('blog.detail',$blog->uniq) }}#primaryimage",
                 "url": "{{ asset('assets/blog/'.$blog->thumnail) }}",
                 "contentUrl": "{{ asset('assets/blog/'.$blog->thumnail) }}",
-                "width": 1920,
-                "height": 1080,
+                "width": 720,
+                "height": 384,
                 "caption": "{{ $blog->title }}"
               },
               {
@@ -133,36 +127,36 @@
                     "position": {{ $no++ }},
                     "name": "{{ $nw->title }}",
                     "item": "{{ route('blog.detail',$nw->uniq) }}"
-                  },
+                  }@if($no != 7),@endif
 @endforeach
                 ]
               },
               {
-              "@type": "Organization",
-              "@id": "https://entolrizky.com",
-              "name": "Mohammad Entol Rizky",
-              "url": "https://entolrizky.com",
-              "logo": {
-                "@type": "ImageObject",
-                "inLanguage": "en-US",
-                "@id": "{{ url('/') }}#",
-                "url": "{{ url('/assets/logo/logo.png') }}",
-                "contentUrl": "{{ url('/assets/logo/logo.png') }}",
-                "width": 606,
-                "height": 67,
-                "caption": "{{ config('app.name', 'Blog with SEO') }}"
+                "@type": "Organization",
+                "@id": "https://entolrizky.com",
+                "name": "Mohammad Entol Rizky",
+                "url": "https://entolrizky.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "inLanguage": "en-US",
+                  "@id": "{{ url('/') }}#",
+                  "url": "{{ url('/assets/logo/logo.png') }}",
+                  "contentUrl": "{{ url('/assets/logo/logo.png') }}",
+                  "width": 1920,
+                  "height": 1080,
+                  "caption": "{{ config('app.name', 'Blog with SEO') }}"
+                },
+                "image": {
+                  "@id": "{{ url('/') }}#/schema/logo/image/"
+                },
+                "sameAs": [
+                  "https://www.instagram.com/meeerrrm/",
+                  "https://www.facebook.com/MuhammadE.Rizky08/",
+                  "https://github.com/meeerrrm",
+                  "https://www.linkedin.com/in/mohammad-entol-rizky-0659a722b/",
+                  "https://entolrizky.com"
+                ]
               },
-              "image": {
-                "@id": "{{ url('/') }}#/schema/logo/image/"
-              },
-              "sameAs": [
-                "https://www.instagram.com/meeerrrm/",
-                "https://www.facebook.com/MuhammadE.Rizky08/",
-                "https://github.com/meeerrrm",
-                "https://www.linkedin.com/in/mohammad-entol-rizky-0659a722b/",
-                "https://entolrizky.com"
-              ]
-              }
               {
                 "@type": "Person",
                 "@id": "{{ url('/') }}",
