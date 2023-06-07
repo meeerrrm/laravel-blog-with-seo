@@ -1,7 +1,7 @@
 <x-landing-layout>
 
 	<x-slot name="seo_config">
-		<meta name="description" content="Blog dengan konten edukatif yang berisi seputar teknologi.">
+		<meta name="description" content="Dapatkan informasi edukatif seputar perkembangan teknologi, pengembangan infastruktur, perangkat lunak dan berbagai hal teknologi lainnya.">
 		<meta name="keywords" content="@foreach($tags as $key => $val){{$key .','}} @endforeach {{ config('app.name', 'Blog with SEO') }}">
 		
 		<meta name="copyright"content="Entol Rizky Development" />
@@ -9,7 +9,78 @@
 		<meta name="author" content="Entol Rizky Development" />
         <meta name="publisher" content="Entol Rizky Development">
 
-		<meta name="blogcatalog" />
+        <script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@graph": [
+			  {
+				"@type": "CollectionPage",
+				"@id": "{{ url('/') }}",
+				"url": "{{ url('/') }}",
+				"name": "{{ config('app.name', 'Blog with SEO') }} - Informasi, Tutorial Pengembangan Infrastuktur Teknologi",
+				"isPartOf": {
+				  "@id": "{{ url('/') }}#website"
+				},
+				"about": {
+				  "@id": "https://entolrizky.com"
+				},
+				"description": "Dapatkan informasi edukatif seputar perkembangan teknologi, pengembangan infastruktur, perangkat lunak dan berbagai hal teknologi lainnya.",
+				"breadcrumb": {
+				  "@id": "{{ url('/') }}#breadcrumb"
+				},
+				"inLanguage": "en-US"
+			  },
+			  {
+				"@type": "BreadcrumbList",
+				"@id": "{{ url('/') }}#breadcrumb",
+				"itemListElement": [
+				  {
+					"@type": "ListItem",
+					"position": 1,
+					"name": "Home"
+				  }
+				]
+			  },
+			  {
+				"@type": "WebSite",
+				"@id": "{{ url('/') }}",
+				"url": "{{ url('/') }}",
+				"name": "{{ config('app.name', 'Blog with SEO') }}",
+				"description": "Informasi, Tutorial Pengembangan Infrastuktur Teknologi",
+				"publisher": {
+				  "@id": "{{ url('/') }}#organization"
+				},
+				"inLanguage": "en-US"
+			  },
+			  {
+				"@type": "Organization",
+				"@id": "https://entolrizky.com",
+				"name": "Mohammad Entol Rizky",
+				"url": "https://entolrizky.com",
+				"logo": {
+				  "@type": "ImageObject",
+				  "inLanguage": "en-US",
+				  "@id": "{{ url('/') }}#",
+				  "url": "{{ url('/assets/logo/logo.png') }}",
+				  "contentUrl": "{{ url('/assets/logo/logo.png') }}",
+				  "width": 606,
+				  "height": 67,
+				  "caption": "{{ config('app.name', 'Blog with SEO') }}"
+				},
+				"image": {
+				  "@id": "{{ url('/') }}#/schema/logo/image/"
+				},
+				"sameAs": [
+				  "https://www.instagram.com/meeerrrm/",
+				  "https://www.facebook.com/MuhammadE.Rizky08/",
+				  "https://github.com/meeerrrm",
+				  "https://www.linkedin.com/in/mohammad-entol-rizky-0659a722b/",
+				  "https://entolrizky.com"
+				]
+			  }
+			]
+		}
+		</script>
 	</x-slot>
 
         <section class="p-8 pt-[20vh] grid grid-cols-1 content-center" id="header">

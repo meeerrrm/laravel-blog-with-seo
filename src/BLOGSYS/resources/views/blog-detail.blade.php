@@ -1,41 +1,180 @@
 <x-landing-layout>
     <x-slot name="title">
-        <title>{{ $blog->title }} | Blog | {{ config('app.name', 'Blog with SEO') }}</title>
+        <title>{{ $blog->title }}</title>
     </x-slot>
 	<x-slot name="seo_config">
 		<meta name="description" content="{{ $blog->description }}">
 		<meta name="keywords" content="@foreach(json_decode($blog->tag) as $val){{ $val }}, @endforeach{{ $blog->keyword }},{{ strtolower($blog->user->name) }}">
 		<meta name="author" content="{{ $blog->user->name }}" />
-        <meta name="publisher" content="Entol Rizky Development">
+        <meta name="publisher" content="{{ config('app.name', 'Blog with SEO') }}">
 
-        <meta name="og:title" content="{{ $blog->title }}"/>
-        <meta name="og:type" content="website"/>
-        <meta name="og:url" content="{{ Request::url() }}"/>
-        <meta name="og:image" content="{{ asset('assets/blog/'.$blog->thumnail) }}"/>
-        <meta name="og:image:alt" content="{{ $blog->title }}" />
-        <meta name="og:site_name" content="ERDev"/>
-        <meta name="og:description" content="{{ $blog->description }}..."/>
-        <meta name="article:published_time" content="{{ $blog->publish_date }}"/>
+        <meta property="og:title" content="{{ $blog->title }}"/>
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="{{ Request::url() }}"/>
+        <meta property="og:image" content="{{ asset('assets/blog/'.$blog->thumnail) }}"/>
+        <meta property="og:image:alt" content="{{ $blog->title }}" />
+        <meta property="og:site_name" content="{{ config('app.name', 'Blog with SEO') }}"/>
+        <meta property="og:description" content="{{ $blog->description }}..."/>
+        <meta property="article:published_time" content="{{ $blog->publish_date }}"/>
         <script type="application/ld+json">
         {
             "@context": "https://schema.org",
-            "@type": "NewsArticle",
-            "headline": "{{ $blog->title }}",
-            "image": [
-                "{{ asset('assets/blog/'.$blog->thumnail) }}",
-            ],
-            "datePublished": "{{ $blog->publish_date }}T08:00:00+08:00",
-            "dateModified": "{{ date('Y-m-d',strtotime($blog->updated_at)) }}T09:20:00+08:00",
-            "author": [{
+            "@graph": [
+              {
+                "@type": "Article",
+                "@id": "{{ route('blog.detail',$blog->uniq) }}#article",
+                "isPartOf": {
+                  "@id": "{{ route('blog.detail',$blog->uniq) }}"
+                },
+                "author": [
+                  {
+                    "@id": "{{ url('/') }}"
+                  }
+                ],
+                "headline": "{{ $blog->title }}",
+                "datePublished": "{{ $blog->publish_date }}T03:00:00+00:00",
+                "dateModified": "{{ date('Y-m-d',strtotime($blog->updated_at)) }}T05:07:25+00:00",
+                "mainEntityOfPage": {
+                  "@id": "{{ route('blog.detail',$blog->uniq) }}"
+                },
+                "wordCount": {{ strlen($blog->content) }},
+                "publisher": {
+                  "@id": "{{ url('/') }}#organization"
+                },
+                "image": {
+                  "@id": "{{ route('blog.detail',$blog->uniq) }}#primaryimage"
+                },
+                "thumbnailUrl": "{{ asset('assets/blog/'.$blog->thumnail) }}",
+                "keywords": [
+@foreach(explode(',',$blog->keyword) as $kw)
+                  "{{ $kw }}",
+@endforeach
+                ],
+                "articleSection": [
+@foreach($newest as $nw)
+                  "{{ $nw->title }}",
+@endforeach
+                ],
+                "inLanguage": "en-US",
+                "potentialAction": [
+                  {
+                    "@type": "CommentAction",
+                    "name": "Comment",
+                    "target": [
+                      "{{ route('blog.detail',$blog->uniq) }}#respond"
+                    ]
+                  }
+                ],
+                "video": [
+                  {
+                    "@id": "{{ route('blog.detail',$blog->uniq) }}#video"
+                  }
+                ]
+              },
+              {
+                "@type": "WebPage",
+                "@id": "{{ route('blog.detail',$blog->uniq) }}",
+                "url": "{{ route('blog.detail',$blog->uniq) }}",
+                "name": "{{ $blog->title }}",
+                "isPartOf": {
+                  "@id": "{{ url('/') }}"
+                },
+                "primaryImageOfPage": {
+                  "@id": "{{ route('blog.detail',$blog->uniq) }}#primaryimage"
+                },
+                "image": {
+                  "@id": "{{ route('blog.detail',$blog->uniq) }}#primaryimage"
+                },
+                "thumbnailUrl": "{{ asset('assets/blog/'.$blog->thumnail) }}",
+                "datePublished": "2022-03-21T03:00:00+00:00",
+                "dateModified": "2023-04-13T05:07:25+00:00",
+                "description": "{{ $blog->description }}",
+                "breadcrumb": {
+                  "@id": "{{ route('blog.detail',$blog->uniq) }}#breadcrumb"
+                },
+                "inLanguage": "en-US",
+                "potentialAction": [
+                  {
+                    "@type": "ReadAction",
+                    "target": [
+                      "{{ route('blog.detail',$blog->uniq) }}"
+                    ]
+                  }
+                ]
+              },
+              {
+                "@type": "ImageObject",
+                "inLanguage": "en-US",
+                "@id": "{{ route('blog.detail',$blog->uniq) }}#primaryimage",
+                "url": "{{ asset('assets/blog/'.$blog->thumnail) }}",
+                "contentUrl": "{{ asset('assets/blog/'.$blog->thumnail) }}",
+                "width": 720,
+                "height": 384,
+                "caption": "Apa Itu SEO"
+              },
+              {
+                "@type": "BreadcrumbList",
+                "@id": "{{ route('blog.detail',$blog->uniq) }}#breadcrumb",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "{{ url('/') }}"
+                  },
+@php $no = 2 @endphp
+@foreach($newest as $nw)
+                  {
+                    "@type": "ListItem",
+                    "position": {{ $no++ }},
+                    "name": "{{ $nw->title }}",
+                    "item": "{{ route('blog.detail',$nw->uniq) }}"
+                  },
+@endforeach
+                ]
+              },
+              {
+              "@type": "Organization",
+              "@id": "https://entolrizky.com",
+              "name": "Mohammad Entol Rizky",
+              "url": "https://entolrizky.com",
+              "logo": {
+                "@type": "ImageObject",
+                "inLanguage": "en-US",
+                "@id": "{{ url('/') }}#",
+                "url": "{{ url('/assets/logo/logo.png') }}",
+                "contentUrl": "{{ url('/assets/logo/logo.png') }}",
+                "width": 606,
+                "height": 67,
+                "caption": "{{ config('app.name', 'Blog with SEO') }}"
+              },
+              "image": {
+                "@id": "{{ url('/') }}#/schema/logo/image/"
+              },
+              "sameAs": [
+                "https://www.instagram.com/meeerrrm/",
+                "https://www.facebook.com/MuhammadE.Rizky08/",
+                "https://github.com/meeerrrm",
+                "https://www.linkedin.com/in/mohammad-entol-rizky-0659a722b/",
+                "https://entolrizky.com"
+              ]
+              }
+              {
                 "@type": "Person",
-                "name": "{{ $blog->user->name }}",
-                "url": "https://entolrizky.com/"
-            }]
-            "publisher":{
-                "name": "{{ config('app.name', 'Blog with SEO') }}",
+                "@id": "{{ url('/') }}",
+                "name": "{{ $blog->user->name}}",
+                "image": {
+                  "@type": "ImageObject",
+                  "inLanguage": "en-US",
+                  "@id": "{{ url('/') }}",
+                  "url": "{{ url('/assets/picture/'.$blog->user->profile_picture) }}",
+                  "contentUrl": "{{ url('/assets/picture/'.$blog->user->profile_picture) }}",
+                  "caption": "{{ $blog->user->name}}"
+                },
                 "url": "{{ url('/') }}"
-            }
-        }
+              }
+            ]
+          }
         </script>
     </x-slot>
         <div class="p-4 py-24" id="header">

@@ -22,5 +22,5 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
-/public_html/assets/blog/*
-blog.entolrizky.com/hot
+src/blog.entolrizky.com/assets/blog/*
+src/blog.entolrizky.com/hot

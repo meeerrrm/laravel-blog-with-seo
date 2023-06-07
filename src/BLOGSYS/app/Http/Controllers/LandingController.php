@@ -16,9 +16,10 @@ class LandingController extends Controller
     }
     public function detail($uniq)
     {
-        $blog = BlogPost::where('uniq',$uniq)->first();
+        $blog = BlogPost::release()->where('uniq',$uniq)->first();
+        $newest = BlogPost::release()->paginate(3);
         if(isset($blog->title)){
-            return view('blog-detail',['blog'=>$blog]);
+            return view('blog-detail',['blog'=>$blog,'newest'=>$newest]);
         }
         return abort(404);
     }
