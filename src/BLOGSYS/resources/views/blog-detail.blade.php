@@ -28,7 +28,7 @@
                 },
                 "author": [
                   {
-                    "@id": "{{ url('/') }}"
+                    "@id": "https://entolrizky.com/"
                   }
                 ],
                 "headline": "{{ $blog->title }}",
@@ -39,7 +39,7 @@
                 },
                 "wordCount": {{ strlen($blog->content) }},
                 "publisher": {
-                  "@id": "{{ url('/') }}#organization"
+                  "@id": "https://entolrizky.com/"
                 },
                 "image": {
                   "@id": "{{ route('blog.detail',$blog->uniq) }}#primaryimage"
@@ -55,15 +55,7 @@
                   "{{ $nw->title }}",
 @endforeach
                 ],
-                "inLanguage": "en-US",
-                "potentialAction": [
-                  {
-                    "@type": "CommentAction",
-                    "name": "Comment",
-                    "target": [
-                      "{{ route('blog.detail',$blog->uniq) }}#respond"
-                    ]
-                  }
+                "inLanguage": "en-US"
                 ],
                 "video": [
                   {
@@ -110,7 +102,7 @@
                 "contentUrl": "{{ asset('assets/blog/'.$blog->thumnail) }}",
                 "width": 720,
                 "height": 384,
-                "caption": "Apa Itu SEO"
+                "caption": "{{ $blog->title }}"
               },
               {
                 "@type": "BreadcrumbList",
@@ -120,9 +112,21 @@
                     "@type": "ListItem",
                     "position": 1,
                     "name": "Home",
-                    "item": "{{ url('/') }}"
+                    "item": "{{ route('index') }}"
                   },
-@php $no = 2 @endphp
+                  {
+                    "@type": "ListItem",
+                    "position": 2,
+                    "name": "Tag",
+                    "item": "{{ route('tag') }}"
+                  },
+                  {
+                    "@type": "ListItem",
+                    "position": 3,
+                    "name": "Portal",
+                    "item": "https://blog.entolrizky.com/"
+                  },
+@php $no = 4 @endphp
 @foreach($newest as $nw)
                   {
                     "@type": "ListItem",

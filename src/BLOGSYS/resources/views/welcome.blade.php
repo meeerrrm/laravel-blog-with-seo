@@ -32,13 +32,25 @@
 			  },
 			  {
 				"@type": "BreadcrumbList",
-				"@id": "{{ url('/') }}#breadcrumb",
 				"itemListElement": [
-				  {
-					"@type": "ListItem",
-					"position": 1,
-					"name": "Home"
-				  }
+					{
+						"@type": "ListItem",
+						"position": 1,
+						"name": "Home",
+						"item": "{{ route('index') }}"
+					},
+					{
+						"@type": "ListItem",
+						"position": 2,
+						"name": "Tag",
+						"item": "{{ route('tag') }}"
+					},
+					{
+						"@type": "ListItem",
+						"position": 3,
+						"name": "Portal",
+						"item": "https://blog.entolrizky.com/"
+					}
 				]
 			  },
 			  {
