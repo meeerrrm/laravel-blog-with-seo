@@ -79,7 +79,7 @@ class BlogController extends FunctionController
         ]);
         $request->uniq = $this->remove_special($request->uniq);
         $thumnail = $request->old_thumnail;
-        if($request->hasFile($request->thumnail)){
+        if($request->hasFile('thumnail')){
             $thumnail = $this->upload_image($request->file('thumnail'),'blog',$request->uniq);
         }
         $blog = BlogPost::whereId($request->id)->update([

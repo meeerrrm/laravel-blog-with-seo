@@ -59,7 +59,7 @@
 				"@id": "{{ url('/') }}",
 				"url": "{{ url('/') }}",
 				"name": "{{ config('app.name', 'Blog with SEO') }}",
-				"description": "Informasi, Tutorial Pengembangan Infrastuktur Teknologi",
+				"description": "Dapatkan informasi edukatif seputar perkembangan teknologi, pengembangan infastruktur, perangkat lunak dan berbagai hal teknologi lainnya",
 				"publisher": {
 				  "@id": "{{ url('/') }}#organization"
 				},
