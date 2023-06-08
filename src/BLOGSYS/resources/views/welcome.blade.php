@@ -87,7 +87,7 @@
 				  "https://www.instagram.com/meeerrrm/",
 				  "https://www.facebook.com/MuhammadE.Rizky08/",
 				  "https://github.com/meeerrrm",
-				  "https://www.linkedin.com/in/mohammad-entol-rizky-0659a722b/",
+				  "https://www.linkedin.com/in/mohammad-entol-rizky/",
 				  "https://entolrizky.com"
 				]
 			  }
