@@ -53,6 +53,7 @@
                                             <tr class="border-b">
                                                 <th class="px-6 py-3 text-center">Author</th>
                                                 <th class="px-6 py-3 text-center">Title</th>
+                                                <th class="px-6 py-3 text-center">View</th>
                                                 <th class="px-6 py-3 text-center">Action</th>
                                             </tr>
                                         </thead>
@@ -61,6 +62,7 @@
                                             <tr class="border-b even:bg-gray-100">
                                                 <td class="px-6 py-3 text-center">{{ $d->user->name }}</td>
                                                 <td class="px-6 py-3 text-center">{{ $d->title }}</td>
+                                                <td class="px-6 py-3 text-center">{{ count($d->blog_view_log) }}</td>
                                                 <td class="px-6 py-3 text-center">
                                                     <x-a-button-edit href="{{ route('admin.blog.edit',$d->id) }}">{{ __('Update') }}</x-a-button-edit>
                                                     <form method="POST" action="{{ route('admin.blog.destroy') }}" class="inline">

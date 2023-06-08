@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class BlogViewLog extends Model
 {
     use HasFactory;
+
+    public function blog()
+    {
+        return $this->hasMany('App\Models\Blog');
+    }
 }

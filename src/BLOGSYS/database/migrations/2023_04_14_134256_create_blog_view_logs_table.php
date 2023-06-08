@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('blog_view_logs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('blog_id');
+            $table->foreignId('blog_post_id');
             $table->string('ip_address');
             $table->timestamps();
         });

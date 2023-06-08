@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\BlogPost;
+use App\Models\BlogViewLog;
 
 class LandingController extends Controller
 {
@@ -18,6 +19,7 @@ class LandingController extends Controller
     {
         $blog = BlogPost::release()->where('uniq',$uniq)->first();
         $newest = BlogPost::release()->paginate(3);
+        $this->blog_log($blog->id,request()->ip());
         if(isset($blog->title)){
             return view('blog-detail',['blog'=>$blog,'newest'=>$newest]);
         }
@@ -61,5 +63,12 @@ class LandingController extends Controller
         $tag = $this->get_all_tag();
         // dd($route);
         return response()->view('sitemap',['route'=>$route,'blog_list'=>$blog_list,'tag_list'=>$tag])->header('Content-Type', 'text/xml');
+    }
+
+    public function blog_log($blog_id,$ip_address) {
+        $log = new BlogViewLog;
+        $log->blog_id = $blog_id;
+        $log->ip_address = $ip_address;
+        $log->save();
     }
 }
