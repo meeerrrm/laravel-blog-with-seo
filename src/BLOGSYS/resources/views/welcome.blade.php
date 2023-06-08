@@ -8,6 +8,7 @@
 		<meta name="owner" content="Entol Rizky Development" />
 		<meta name="author" content="Entol Rizky Development" />
         <meta name="publisher" content="Entol Rizky Development">
+        <meta property="og:image" content="{{ asset('assets/picture/blog_thumnail.png') }}"/>
 
         <script type="application/ld+json">
 		{
@@ -19,7 +20,7 @@
 				"url": "{{ url('/') }}",
 				"name": "{{ config('app.name', 'Blog with SEO') }} - Informasi, Tutorial Pengembangan Infrastuktur Teknologi",
 				"isPartOf": {
-				  "@id": "{{ url('/') }}#website"
+				  "@id": "{{ url('/') }}"
 				},
 				"about": {
 				  "@id": "https://entolrizky.com"
@@ -73,14 +74,14 @@
 				  "@type": "ImageObject",
 				  "inLanguage": "en-US",
 				  "@id": "{{ url('/') }}#",
-				  "url": "{{ url('/assets/logo/logo.png') }}",
-				  "contentUrl": "{{ url('/assets/logo/logo.png') }}",
-				  "width": 606,
-				  "height": 67,
-				  "caption": "{{ config('app.name', 'Blog with SEO') }}"
+				  "url": "{{ asset('assets/picture/blog_thumnail.png') }}",
+				  "contentUrl": "{{ asset('assets/picture/blog_thumnail.png') }}",
+				  "width": 1920,
+				  "height": 1080,
+				  "caption": "{{ config('app.name', 'Blog with SEO') }} Blog"
 				},
 				"image": {
-				  "@id": "{{ url('/') }}#/schema/logo/image/"
+				  "@id": "{{ url('/') }}"
 				},
 				"sameAs": [
 				  "https://www.instagram.com/meeerrrm/",
