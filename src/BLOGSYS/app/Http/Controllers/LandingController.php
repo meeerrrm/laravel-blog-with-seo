@@ -67,7 +67,7 @@ class LandingController extends Controller
 
     public function blog_log($blog_id,$ip_address) {
         $log = new BlogViewLog;
-        $log->blog_id = $blog_id;
+        $log->blog_post_id = $blog_id;
         $log->ip_address = $ip_address;
         $log->save();
     }
