@@ -20,6 +20,11 @@
   <priority>0.90</priority>
 </url>
 @endforeach
+<url>
+  <loc>{{ route('tag') }}</loc>
+  <lastmod>2023-01-01T07:16:32+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 @foreach($tag_list as $t => $val)
 <url>
   <loc>{{ route('tag.detail',$t) }}</loc>

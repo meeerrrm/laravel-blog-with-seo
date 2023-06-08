@@ -56,7 +56,6 @@ class LandingController extends Controller
     {
         $route = [
             ['index','1.00'],
-            ['tag','0.80'],
         ];
         $blog_list = BlogPost::release()->get();
         $tag = $this->get_all_tag();
