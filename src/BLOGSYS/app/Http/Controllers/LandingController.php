@@ -19,8 +19,8 @@ class LandingController extends Controller
     {
         $blog = BlogPost::release()->where('uniq',$uniq)->first();
         $newest = BlogPost::release()->paginate(3);
-        $this->blog_log($blog->id,request()->ip());
         if(isset($blog->title)){
+            $this->blog_log($blog->id,request()->ip());
             return view('blog-detail',['blog'=>$blog,'newest'=>$newest]);
         }
         return abort(404);
