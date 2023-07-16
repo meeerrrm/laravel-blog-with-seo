@@ -208,5 +208,23 @@
         </div>
     <x-slot name="js">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/stackoverflow-dark.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.8.0/highlightjs-line-numbers.min.js"></script>
+
+        <script>
+          hljs.highlightAll();
+          hljs.initLineNumbersOnLoad();
+        </script>
+        <script>
+          $(document).ready(function(){
+            $('#mainContent').ready(function(){
+              $("pre").addClass("bg-[#1c1b1b]");
+              $(".hljs-ln-numbers").addClass('!pr-4 border-r-2 border-r-gray-600');
+              $(".hljs-ln-code").addClass('!pl-2')
+              $(".hljs-ln").find('tr').addClass('!border-0');
+            });
+          });
+        </script>
     </x-slot>
 </x-landing-layout>
