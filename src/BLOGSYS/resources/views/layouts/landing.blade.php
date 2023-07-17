@@ -11,7 +11,7 @@
 @if(isset($title))
         {{ $title }}
 @else
-        <title>{{ config('app.name', 'Blog with SEO') }} Blog</title>
+        <title>Blog | {{ config('app.name', 'Blog with SEO') }}</title>
 @endif
         <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo/logo.png') }}" />
         <link rel="canonical" href="{{ Request::url() }}" />
