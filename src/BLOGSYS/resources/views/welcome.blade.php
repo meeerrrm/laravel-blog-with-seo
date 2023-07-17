@@ -26,10 +26,7 @@
 				  "@id": "https://entolrizky.com"
 				},
 				"description": "Dapatkan informasi edukatif seputar perkembangan teknologi, pengembangan infastruktur, perangkat lunak dan berbagai hal teknologi lainnya.",
-				"breadcrumb": {
-				  "@id": "{{ url('/') }}#breadcrumb"
-				},
-				"inLanguage": "en-US"
+				"inLanguage": "id-ID"
 			  },
 			  {
 				"@type": "BreadcrumbList",
@@ -63,7 +60,7 @@
 				"publisher": {
 				  "@id": "{{ url('/') }}#organization"
 				},
-				"inLanguage": "en-US"
+				"inLanguage": "id-ID"
 			  },
 			  {
 				"@type": "Organization",
@@ -78,10 +75,7 @@
 				  "contentUrl": "{{ asset('assets/picture/blog_thumnail.png') }}",
 				  "width": 1920,
 				  "height": 1080,
-				  "caption": "{{ config('app.name', 'Blog with SEO') }} Blog"
-				},
-				"image": {
-				  "@id": "{{ url('/') }}"
+				  "caption": "Blog | {{ config('app.name', 'Blog with SEO') }}"
 				},
 				"sameAs": [
 				  "https://www.instagram.com/meeerrrm/",
