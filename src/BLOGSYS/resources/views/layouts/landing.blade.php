@@ -13,7 +13,7 @@
 @else
         <title>Blog | {{ config('app.name', 'Blog with SEO') }}</title>
 @endif
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/logo/logo.png') }}" />
         <link rel="canonical" href="{{ Request::url() }}" />
 @if($_SERVER['REMOTE_ADDR'] === "127.0.0.1")
         @vite(['resources/css/app.css', 'resources/js/app.js'])
